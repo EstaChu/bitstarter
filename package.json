@@ -5,26 +5,23 @@
   "main": "web.js",
   "author": "EstaChu",
   "license": "MIT",
-
   "dependencies": {
     "express": "2.5.x",
     "commander": "~1.3.0",
-    "cheerio": "~0.12.0"
+    "cheerio": "~0.12.0",
+    "restler": "~2.0.1"
   },
-
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
   },
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/EstaChu/Stanford"
-   },
-
+  },
   "keywords": [
     "node",
     "heroku",
     "Stanford"
-  ],
+  ]
 }

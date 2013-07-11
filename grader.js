@@ -19,13 +19,17 @@ References:
    - http://en.wikipedia.org/wiki/JSON
    - https://developer.mozilla.org/en-US/docs/JSON
    - https://developer.mozilla.org/en-US/docs/JSON#JSON_in_Firefox_2
+ + RESTLER
+   - https://github.com/danwrong/restler
 */
 
 var fs = require('fs');
 var program = require('commander');
+var rest = require('restler');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
+var URL_DEFAULT = "www.google.com";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
@@ -61,14 +65,52 @@ var clone = function(fn) {
     return fn.bind({});
 };
 
-if(require.main == module) {
-    program
-        .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
-        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-        .parse(process.argv);
-    var checkJson = checkHtmlFile(program.file, program.checks);
+var getUrl = function(inurl, incheck){
+    rest.get(inurl).on('complete', function(result){
+        if(result instanceof Error){
+            console.log('%s does not exist. Exiting.', result.message);
+            process.exit(1);
+        } else{
+            var urlResponse = 'urlResponse.html';
+            fs.writeFileSync(urlResponse, result);
+            jsonTest(urlResponse, incheck);
+            fs.unlinkSync(urlResponse);
+        }
+    })
+};
+
+var jsonTest = function(inprogfile, inprogcheck){
+    var checkJson = checkHtmlFile(inprogfile, inprogcheck);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
+};
+
+if(require.main == module) {
+    program
+        .version('0.0.1b')
+        .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
+        .option('-u, --url <url_link>', 'URL to test')
+        .on('--help', function(){
+            console.log('  Usage examples:');
+            console.log('');
+            console.log('    grader --checks checks.json --file index.html');
+            console.log('    grader --c checks.json --f index.html');
+            console.log('    grader --checks checks.json --url whispering-achorage.herokuapp.com');
+            console.log('    grader --c checks.json --u whispering-achorage.herokuapp.com');
+            console.log('');
+        })
+        .parse(process.argv);
+
+    if(program.url){
+        getUrl(program.url, program.checks);
+    }
+    else{
+        var progfile = program.file;
+        var progcheck = program.checks;
+        jsonTest(progfile, progcheck);
+    }
+    
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
