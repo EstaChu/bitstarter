@@ -1,6 +1,6 @@
 {
   "name": "Stanford-bitstarter-project",
-  "version": "0.0.1",
+  "version": "0.0.1b",
   "description": "a node KickStarter project",
   "main": "web.js",
   "author": "EstaChu",
