@@ -7,6 +7,7 @@ var fs = require('fs');
 // ##### app settings
 var app = express.createServer(express.logger());
 var templatePath = '.' // IMPORTANT set to . if no specific path available
+app.use(express.static(__dirname + '/static'));
  
 
 // ##### helper functions

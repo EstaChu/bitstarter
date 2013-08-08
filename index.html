@@ -4,124 +4,18 @@
     <meta charset="utf-8">
     <title>BrainX.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=5.0">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/social-buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
           rel="stylesheet" type="text/css">
-
-    <style type="text/css">
-
-      /* Large desktop */
-      @media (min-width: 980px) { 
-        body {
-          padding-top: 60px;
-        }
-        .linediv-l {
-          border-right: 1px white solid;
-        }
-        .linediv-r {
-          border-left: 1px white solid;
-        }
-      }
-
-      /* Small screens */
-      @media (min-width: 767px) and (max-width: 979px){
-        body {
-          padding: 2.5% 10%
-        }
-        .linediv-l {
-          border-right: 1px white solid;
-        }
-        .linediv-r {
-          border-left: 1px white solid;
-        }
-      }
-
-      /* Landscape phones and down */
-      @media (max-width: 766px) { 
-        .copy {
-          padding: 2.5% 10%;
-        }
-        .linediv-l {
-          border-bottom: 1px white solid;
-        }
-        .linediv-r {
-          border-top: 1px white solid;
-        }
-      }
-
-      /* All form factors */
-
-      /* Main body and headings */
-      body{
-        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-      }
-      .heading, .subheading {
-        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-        text-align: center;
-      }
-      p.lead {
-        padding-top: 1.5%;
-        font-size: 24px;
-        line-height: 30px;
-      }
-      p {
-        font-size: 18px;
-        line-height: 24px;
-      }
-
-      /* Video pitch and Action */
-      .pitch {
-        padding: 2.5% 0%;
-      }
-      .order {
-        padding: 2% 0%;
-      }
-      .actions {
-        background-color: #343434;
-        padding: 3% 0%;
-      }
-      .video, .thermometer, .order, .social, .statistics {
-        text-align: center;
-      }
-      .statistics h3, .statistics p {
-        color: white;
-      }
-
-      /* Marketing Copy and Footer */
-      .copy {
-        padding-top: 2.5%;
-        padding-bottom: 2.5%;
-        text-align: justify;
-      }
-      .asset {
-        padding: 2.5% 0%;
-      }
-      .footer {
-        color: #cccccc;
-        text-align: center;
-      }
-      .footer p {
-        font-size: 11px;
-      }
-      .footer a {
-        color: #ccccff;
-      }
-      div.addthis_toolbox {
-        width: 136px;
-        margin: 0 auto;
-      }
-    </style>
-
   </head>
-  <body>
 
-    <!-- Mobile-friendly navbar adapted from example. -->
-    <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+  <body>
+    <!-- Mobile-friendly navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -143,13 +37,8 @@
       </div>
     </div>
 
-    <!-- We use row-fluid inside containers to achieve a resizable layout. -->
-    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
-    <!-- http://stackoverflow.com/a/12270322 -->
+    <!-- Fluid row for responsive design -->
     <div class="container">
-      <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
-      <!-- www.google.com/fonts/specimen/Ubuntu -->
-      <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
       <div class="row-fluid heading">
         <div class="span12">
           <h1>BrainX.io: Development Version</h1>
@@ -157,8 +46,6 @@
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
-          <!-- Special typography from Bootstrap for lead paragraph. -->
-          <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
           <p class="lead">One sentence description.</p>
         </div>
       </div>
@@ -167,15 +54,13 @@
           <img class="img-polaroid" alt="Placeholder" src="http://placehold.it/480x300">
         </div>
 
-        <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
+        <!-- New 'actions' div to contain statistics, order, and share buttons.-->
         <div class="span5 actions">
           <div class="row-fluid">
           <div class="span8 offset2">
             <div class="row-fluid statistics">
               <div class="span4">
-                <!-- linediv-l and linediv-r give dividing lines that look
-                different in horizontal and vertical layouts, illustrating
-                media queries. -->
+                <!-- Responsive hor/ver borders -->
                 <div class="linediv-l">
                 <h3>1000</h3> <p>backers</p>
                 </div>
@@ -187,58 +72,6 @@
               </div>
               <div class="span4">
                 <div class="linediv-r">
-
-                <script>
-
-                  // 
-                  // Add clearInterval && setInterval for hour/min/sec timer
-                  //
-
-
-                  var counter = setInterval(timeCalc, 1000);
-                  // window.onload = timeCalc;
-
-                  function timeCalc(){
-                    // UNIX time 2 UTF
-                    var actTime = new Date().getTime();
-                    // var expTime = new Date(2013, 8, 25, 00, 03, 10).getTime();
-                    var expTime = new Date(2013, 7, 9, 00, 03, 10).getTime();
-                    var diffTime = Math.abs(Math.floor((actTime - expTime)/1000));
-
-                    var days = calculateUnit(diffTime, 86400);
-                    var hours = calculateUnit((diffTime - (days * 86400)), 3600);
-                    var mins = calculateUnit((diffTime - (days * 86400) - (hours * 3600)), 60);
-                    var secs = calculateUnit((diffTime - (days * 86400) - (hours * 3600) - (mins * 60)), 1);
-
-                    // Adding spelling correctness
-                    var hour = hours + ':' + (mins<10?'0'+mins:mins) + ':' + (secs<10?'0'+secs:secs);
-                    // var hour = hours+':'+mins+':'+secs;
-
-
-                    return timePrint(diffTime, days, hour);
-                  };
-
-                  function calculateUnit(diffTime, unitSeconds){
-                    var tmp = Math.abs((tmp = diffTime / unitSeconds)) < 1 ? 0 : tmp;
-                    return Math.abs(tmp < 0 ? Math.ceil(tmp) :  Math.floor(tmp));
-                  }
-
-                  function timePrint(dt, d, h){
-                    console.log('Debug ====>> ' + dt, d, h);
-                    // Time formatting and 
-                    if(dt > 518400){
-                      document.getElementById('time').innerHTML = d;
-                      document.getElementById('tStr').innerHTML = 'days left';
-                    }else{
-                      // clearInterval(counter);
-                      // var counter = setInterval(timeCalc, 1000);
-                      document.getElementById('time').innerHTML = h;
-                      document.getElementById('tStr').innerHTML = 'hours left';
-                    }
-                  };
-
-                </script>
-
                 <h3 id='time'>---</h3> <p id='tStr'>---</p>
                 </div>
               </div>
@@ -246,8 +79,8 @@
           </div>
           <div class="row-fluid">
           <div class="span10 offset1">
-            <!-- Bootstrap progress bar -->
-            <!-- http://twitter.github.io/bootstrap/components.html#progress -->
+
+            <!-- Bootstrap progress bar and buttons -->
             <div class="thermometer progress active">
               <div class="bar bar-success" style="width: 60%;"></div>
               <div class="bar bar-warning" style="width: 40%;"></div>
@@ -256,27 +89,26 @@
           </div>
           <div class="row-fluid">
           <div class="span6 offset3 order">
-            <!-- Standard Bootstrap button. -->
-            <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
             <button class="btn btn-success btn-large">Preorder</button>
           </div>
           </div>
           <div class="row-fluid">
           <div class="span8 offset2 social">
-            <!-- Social buttons are not included in default Bootstrap. -->
-            <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
             <div class="span8 offset2 social">
+            <!-- NOTE: Social buttons are not included in default Bootstrap. http://noizwaves.github.io/bootstrap-social-buttons -->
+
               <!-- AddThis Button BEGIN -->
               <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
                 <a class="addthis_button_preferred_1"></a>
                 <a class="addthis_button_preferred_2"></a>
                 <!-- <a class="addthis_button_compact"></a> -->
+                <!-- TODO: making a social sharing system -->
                 <a class="addthis_counter addthis_bubble_style"></a>
               </div>
                <script type="text/javascript">var addthis_config = 
                 {"data_track_addressbar":false};</script>
                <script type="text/javascript" 
-                       src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
+                       src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5ff549fdf9b"></script>
               <!-- AddThis Button END -->
             </div>
           </div>
@@ -285,10 +117,7 @@
         </div>
       </div>
 
-      <!-- Beyond this part the marketing copy begins. -->
-      <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
-      <!-- http://twitter.github.io/bootstrap/base-css.html#images -->
-      <!-- http://placehold.it -->
+      <!-- Marketing Stuff -->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
           <img class="img-polaroid"  alt="Placeholder" src="http://placehold.it/480x300">
@@ -309,7 +138,6 @@
           </p>
         </div>
       </div>
-
       <div class="row-fluid section2">
         <div class="span5 offset1 copy copy-right">
           <p>
@@ -331,9 +159,7 @@
         </div>
       </div>
 
-      <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
-      <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
-      <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
+      <!-- Accordion -->
       <div class="row-fluid faq">
           <div class="span10 offset1">
             <h3>FAQ</h3>
@@ -379,11 +205,9 @@
               </div>
             </div>
           </div>
-
       </div>
 
-      <!-- Not crucial, but we put this under a CC By-SA 3.0 license. -->
-      <!-- http://creativecommons.org/licenses/ -->
+      <!-- Footer and policy's -->
       <div class='row-fluid footer'>
         <div class='span12'>
           <p class='text-center'>Copyright &copy; 2013 BrainX.io | All rights reserved.</p>
@@ -396,4 +220,11 @@
       </div>
     </div>
   </body>
+
+  <!-- ############################# -->
+  <!-- Le fucking crafted JavaScript -->
+  <script src='js/timer.js'></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+
 </html> 
