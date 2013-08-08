@@ -237,9 +237,6 @@
                     }
                   };
 
-                  // // uglifyJS -c -m
-                  // function timeCalc(){var t=(new Date).getTime(),e=new Date(2013,7,9,0,3,10).getTime(),n=Math.abs(Math.floor((t-e)/1e3)),a=calculateUnit(n,86400),l=calculateUnit(n-86400*a,3600),i=calculateUnit(n-86400*a-3600*l,60),c=calculateUnit(n-86400*a-3600*l-60*i,1),r=(10>l?"0"+l:l)+":"+(10>i?"0"+i:i)+":"+(10>c?"0"+c:c);return timePrint(n,a,r)}function calculateUnit(t,e){var n=Math.abs(n=t/e)<1?0:n;return Math.abs(0>n?Math.ceil(n):Math.floor(n))}function timePrint(t,e,n){t>518400?(document.getElementById("time").innerHTML=e,document.getElementById("tStr").innerHTML="days left"):(document.getElementById("time").innerHTML=n,document.getElementById("tStr").innerHTML="hours left")}var counter=setInterval(timeCalc,1e3);
-
                 </script>
 
                 <h3 id='time'>---</h3> <p id='tStr'>---</p>
